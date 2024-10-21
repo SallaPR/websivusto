@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav>
+        <!-- Sidebar navigation menu -->
+        <ul class="sidebar">
+            <!-- Close button for sidebar -->
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px"
+                        viewBox="0 -960 960 960" width="26px" fill="#00000">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></a></li>
+            <!-- Nav links -->
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="stuff.html">STUFF</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <ul>
+            <li class="logo"><a class="no-hover" href="index.html">My Website</a></li>
+            <!-- Darkmode button -->
+            <img src="images/moon.png" alt="icon" id="icon">
+            <!-- Links for larger screen -->
+            <li class="hideOnMobile"><a href="index.html">HOME</a></li>
+            <li class="hideOnMobile"><a href="stuff.html">STUFF</a></li>
+            <li class="hideOnMobile"><a href="gallery.html">GALLERY</a></li>
+            <li class="hideOnMobile"><a href="contact.html">CONTACT</a></li>
+            <!-- Open button for sidebar -->
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                        height="26px" viewBox="0 -960 960 960" width="26px" fill="#00000">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- Welcome section -->
+        <section id="welcome">
+            <h1>Welcome to My Website</h1>
+            <p>Hello and welcome! This website is my school project to show my skills in HTML, CSS and JavaScript. Take
+                a look around and thanks for stopping by. Happy exploring!</p>
+        </section>
+
+        <!-- Slideshow -->
+        <section id="slideshow">
+            <div class="slide-container">
+                <img name="slide" class="slide">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <ul>
+                    <!-- Social media icons with links -->
+                    <li><a href="https://facebook.com" target="_blank"><img class="social-logo"
+                                src="images/facebook-icon.png" alt="Facebook icon"></a></li>
+                    <li><a href="https://twitter.com" target="_blank"><img class="social-logo"
+                                src="images/twitter-icon.png" alt="Twitter icon"></a></li>
+                    <li><a href="https://instagram.com" target="_blank"><img class="social-logo"
+                                src="images/instagram-icon.png" alt="Instagram icon"></a></li>
+                    <li><a href="https://github.com/" target="_blank"><img class="social-logo"
+                                src="images/github-icon.png" alt="GitHub icon"></a></li>
+                </ul>
+            </div>
+            <p>&copy; 2024 Salla Paaso-Rantala</p>
+        </div>
+    </footer>
+
+    <!-- Link to script file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

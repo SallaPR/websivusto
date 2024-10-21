@@ -1,0 +1,703 @@
+:root {
+  /* Colors used on the website */
+  --base-color: #faf0f0;
+  --base-variant: #fff6f6ce;
+  --secondary-color: #212121;
+  --text-color: #212121;
+  --text-secondary: #65006e;
+  --accent-color: #ebc5e179;
+  --btn: #a88bac;
+  --btn-hover: #88708b;
+}
+
+.darkmode {
+  /* Dark mode colors */
+  --base-color: #533552;
+  --base-variant: #533552e1;
+  --secondary-color: #212121;
+  --text-color: #e9e9e9;
+  --text-secondary: #6e526b;
+  --accent-color: #ebc5e127;
+  --btn: #a88bac;
+  --btn-hover: #88708b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation bar styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(--base-color);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+nav ul {
+  width: calc(100% - 40px);
+  max-width: 1150px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+/* Color change and scale effect on hover */
+nav a:not(.no-hover):hover {
+  color: var(--text-secondary);
+  transform: scale(1.2);
+}
+
+/* Logo to the left */
+nav li:first-child {
+  margin-right: auto;
+}
+
+/* Main container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  margin: 70px auto 0;
+  padding: 20px;
+  background-color: var(--base-variant);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.452);
+  flex-grow: 1; /* Allow container to grow */
+}
+
+/* Dark mode icon */
+#icon {
+  width: 30px; /* Size of dark mode icon */
+  cursor: pointer; /* Pointer to cursor on hover */
+}
+
+/* Footer styles */
+.footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--base-variant);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.452);
+  text-align: center;
+  flex: 0 0 70px; /* Fixed height for footer */
+  margin-top: auto; /* Push footer to bottom */
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer p {
+  margin: 5px 0;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Mobile menu styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px; /* Width of the sidebar */
+  z-index: 999; /* Ensure sidebar is above other content */
+  background-color: rgba(255, 255, 255, 0.322);
+  backdrop-filter: blur(10px); /* Blurred background */
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li {
+  width: 100%; /* Full width for sidebar items */
+}
+
+.sidebar a {
+  width: 100%; /* Full width for sidebar links */
+}
+
+.menu-button {
+  display: none; /* Hide menu button by default */
+}
+
+.logo {
+  font-size: 38px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+#welcome {
+  padding: 50px; /* Padding for welcome section */
+}
+
+#welcome h1 {
+  text-align: center;
+  margin-bottom: 20px; /* Margin below header */
+}
+
+/* Button styles */
+.btn {
+  background-color: var(--btn);
+  color: rgb(255, 255, 255);
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Slideshow styles */
+#slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  overflow: hidden; /* Hide overflow for slideshow */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px; /* Margin below slideshow */
+}
+
+.slide-container {
+  display: flex;
+  transition: transform 1s ease; /* Smooth transition for slides */
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%; /* Each slide takes full width */
+  height: 100%; /* Full height for slides */
+  object-fit: cover; /* Cover image within slide */
+}
+
+/* Weather styles */
+#weather {
+  max-width: 550px;
+  margin-top: 20px;
+  height: auto;
+  padding: 25px;
+  padding-bottom: 20px;
+  background-color: var(--base-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.weather-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+}
+
+#cityInput {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#weather-info {
+  color: var(--text-color);
+}
+
+/* Cats or dogs quiz section */
+
+#quiz h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#quiz {
+  max-width: 600px;
+  margin-top: 20px;
+  height: auto;
+  padding: 25px;
+  padding-bottom: 20px;
+  background-color: var(--base-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options-form {
+  margin-bottom: 20px;
+}
+
+.options-form label {
+  font-size: 18px;
+  margin-right: 40px;
+}
+
+.options-form input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pets-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  filter: grayscale(100%); /* Black and white effect */
+  border-radius: 8px;
+}
+
+.pets-image.blackAndWhite {
+  filter: grayscale(0); /* Remove the black and white effect */
+  border: 2px solid rgb(214, 142, 192);
+}
+
+/* Table styles */
+
+#movie-table h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#movie-table {
+  max-width: 600px;
+  margin-top: 20px;
+  height: auto;
+  padding: 25px;
+  padding-bottom: 20px;
+  background-color: var(--base-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--accent-color);
+}
+
+th {
+  cursor: pointer;
+  background-color: var(--btn);
+}
+
+th,
+td {
+  border: 1px solid var(--text-color);
+  padding: 8px;
+  text-align: left;
+}
+
+th:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Gallery styles */
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 80vh;
+}
+
+.title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.column {
+  flex: 1 1 calc(33.33% - 20px); /* Responsive columns */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.photo {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.1); /* Scale up image on hover */
+}
+
+/* Modal styles */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(75, 22, 75, 0.658); /* Semi transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: block;
+  max-width: 85%;
+  max-height: 85%;
+  margin: auto;
+  margin-top: 90px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Contact page */
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.text-section {
+  flex: 1;
+  margin-right: 20px;
+  padding: 50px;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.image-section img {
+  width: 350px;
+  height: 350px;
+  max-width: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Form styles */
+
+#form {
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row .form-block {
+  width: 48%;
+}
+
+.form-block {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-block label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-block input,
+.form-block select,
+.form-block textarea {
+  padding: 5px;
+  display: block;
+  width: 100%;
+  border: 1px solid #b8b8b8;
+}
+
+#message {
+  height: 110px;
+  width: 100%;
+  resize: vertical;
+}
+
+#form-btn {
+  width: 50%;
+}
+
+/* Social media styles */
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.social-media ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.social-media ul li {
+  display: inline-block;
+}
+
+.social-media ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.social-media ul li a:hover {
+  transform: scale(1.2); /* Scale up icon on hover */
+}
+
+.social-logo {
+  width: 25px;
+  height: 25px;
+  margin: auto;
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+  .container {
+    min-height: calc(100vh - 70px);
+    padding: 20px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .hideOnMobile {
+    display: none; /* Hide elements on mobile */
+  }
+
+  .menu-button {
+    display: block; /* Show menu button on mobile */
+  }
+
+  nav a:not(.no-hover):hover {
+    transform: none;
+  }
+
+  .logo {
+    font-size: 34px;
+  }
+
+  #slideshow {
+    max-width: 80%;
+  }
+
+  .pets-image {
+    width: 50%;
+  }
+
+  #movie-table {
+    padding: 15px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  .contact-info {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 80%;
+  }
+
+  .text-section {
+    margin-right: 0;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  #form {
+    width: 80%; /* Width for form on smaller screens */
+  }
+
+  #form-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  #welcome {
+    padding: 20px;
+  }
+
+  #slideshow {
+    max-width: 90%;
+  }
+
+  #weather {
+    width: 90%;
+  }
+
+  .weather-container {
+    grid-template-columns: 1fr; /* Single column for weather container */
+  }
+
+  .input-section {
+    width: 80%;
+  }
+
+  .images-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pets-image {
+    width: 100%;
+  }
+
+  #movie-table {
+    padding: 10px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #gallery {
+    flex-direction: column; /* Column layout for gallery on mobile */
+  }
+
+  .image-section img {
+    max-width: 300px;
+  }
+
+  .form-row {
+    flex-direction: column; /* Stack form row items vertically */
+  }
+
+  #form {
+    width: 75%; /* Width for form on smaller screens */
+  }
+
+  .form-row .form-block {
+    width: 100%; /* Full width for form blocks on mobile */
+  }
+}
