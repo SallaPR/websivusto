@@ -1,5 +1,5 @@
 # Web-sovellusprojekti
-[Web page](https://sallapr.github.io/websivusto/)
+https://sallapr.github.io/websivusto/
 
 ## Criteria
 
